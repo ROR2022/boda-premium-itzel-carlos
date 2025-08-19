@@ -1,0 +1,67 @@
+// ⛪ CeremonySection - Sección de información de la ceremonia
+
+import React from 'react'
+import Image from 'next/image'
+import { MapPin, Clock } from 'lucide-react'
+import { Button } from '../ui/button'
+import { weddingData } from '../../data/weddingData'
+import { useMapNavigation } from '../../hooks/useMapNavigation'
+
+export default function CeremonySection() {
+  const { ceremony, couple } = weddingData
+  const { goToCeremony } = useMapNavigation()
+
+  return (
+    <section id="ceremony" className="py-20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative w-full h-96 rounded-2xl shadow-lg overflow-hidden">
+              <Image
+                src={couple.sunsetImage}
+                alt="Pareja al atardecer"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <div className="text-center">
+                <h2 className="font-script text-4xl text-secondary mb-4">
+                  ITINERARIO
+                </h2>
+                <h3 className="font-script text-5xl text-foreground mb-6">
+                  {ceremony.type}
+                </h3>
+
+                <div className="space-y-4">
+                  <div className="flex items-center justify-center gap-2">
+                    <Clock className="w-6 h-6 text-primary" />
+                    <span className="text-2xl font-medium">{ceremony.time}</span>
+                  </div>
+
+                  <h4 className="text-2xl font-bold text-foreground">
+                    {ceremony.name}
+                  </h4>
+
+                  <p className="text-muted-foreground">
+                    {ceremony.address}
+                  </p>
+
+                  <Button
+                    onClick={goToCeremony}
+                    className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-3"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Ir al mapa
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
