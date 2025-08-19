@@ -13,7 +13,7 @@ export default function HeroSection() {
   const { heroSection } = styling
   
   // Configurar animación de scroll
-  const animationConfig = getAnimationConfig('hero')
+  const animationConfig = getAnimationConfig('reception')
   const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
     animationConfig.options,
     animationConfig.type,
@@ -24,14 +24,16 @@ export default function HeroSection() {
     <section 
       ref={sectionRef}
       style={{
+        //border:'2px solid #000',
         backgroundImage: `url('${heroSection.backgroundImage}')`,
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
         ...animationStyle
       }}
       id="home" 
-      className="min-h-screen flex flex-col justify-center items-center relative py-20"
+      className="min-h-screen flex flex-col justify-center items-center relative"
     >
       {/* Overlay configurable */}
       <div 

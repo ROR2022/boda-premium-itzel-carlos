@@ -17,7 +17,7 @@ export const useScrollAnimation = (options = {}, animationType = 'fadeIn', delay
   // Configuración por defecto del Intersection Observer
   const defaultOptions = {
     threshold: 0.1, // 10% del elemento debe ser visible
-    rootMargin: '0px 0px -50px 0px', // Activar un poco antes de que sea completamente visible
+    rootMargin: '0px 0px -500px 0px', // Activar un poco antes de que sea completamente visible
     ...options
   }
 
