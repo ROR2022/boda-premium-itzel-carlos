@@ -131,19 +131,17 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
 
         {/* Wax Seal with Couple Silhouette */}
         <div
-          className={`absolute left-1/2 transform -translate-x-1/2 cursor-pointer transition-all duration-300 hover:scale-105 ${
+          className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-300 hover:scale-105 ${
             isOpening ? "animate-pulse" : ""
           }`}
           style={{ top: '120px' }}
-          onClick={handleOpen}
         >
           {/* Seal Shadow */}
           <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125 pointer-events-none" />
 
           {/* Main Seal - Irregular wax shape */}
           <div
-            className="relative cursor-pointer"
-            onClick={handleOpen}
+            className="relative"
             style={{
               width: "110px",
               height: "110px",
@@ -267,6 +265,18 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               }}
             />
           </div>
+          
+          {/* Capa clickeable transparente que cubre todo el sello */}
+          <div
+            className="absolute inset-0 cursor-pointer"
+            onClick={handleOpen}
+            style={{
+              width: "110px",
+              height: "110px",
+              zIndex: 10
+            }}
+            title="Haz clic para abrir la invitación"
+          />
         </div>
 
         {/* Click instruction (appears before opening) */}
