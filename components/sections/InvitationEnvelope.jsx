@@ -136,6 +136,21 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
           }`}
           style={{ top: '120px' }}
         >
+          {/* Capa clickeable transparente que cubre todo el sello - FUERA de transforms */}
+          <div
+            className="absolute cursor-pointer"
+            onClick={handleOpen}
+            style={{
+              top: 0,
+              left: 0,
+              width: "110px",
+              height: "110px",
+              zIndex: 9999,
+              backgroundColor: "transparent"
+            }}
+            title="Haz clic para abrir la invitación"
+          />
+
           {/* Seal Shadow */}
           <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125 pointer-events-none" />
 
@@ -265,18 +280,6 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               }}
             />
           </div>
-          
-          {/* Capa clickeable transparente que cubre todo el sello */}
-          <div
-            className="absolute inset-0 cursor-pointer"
-            onClick={handleOpen}
-            style={{
-              width: "110px",
-              height: "110px",
-              zIndex: 10
-            }}
-            title="Haz clic para abrir la invitación"
-          />
         </div>
 
         {/* Click instruction (appears before opening) */}
