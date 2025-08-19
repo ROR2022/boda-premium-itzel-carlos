@@ -16,6 +16,7 @@ import AudioPlayer from "../components/AudioPlayer"
 import BasicCTA from "../components/sections/BasicCTA"
 import InvitationEnvelope from "../components/sections/InvitationEnvelope"
 import WelcomeMessage from "../components/sections/InvitationWelcome"
+import DecorationElement from "../components/DecorationElement"
 
 export default function WeddingInvitation() {
   const [isOpenInvitation, setIsOpenInvitation] = useState(false);
@@ -44,6 +45,7 @@ export default function WeddingInvitation() {
   return (
     <div className="min-h-screen bg-background">
       {/* <Navigation /> */}
+      <DecorationElement />
       <HeroSection />
       {/* <ParentsSection /> */}
       <DateSection />
