@@ -32,6 +32,7 @@ export default function CeremonySection() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
+        zIndex: 5000,
         ...animationStyle
       }}
     id="ceremony" className="py-20">
@@ -46,11 +47,18 @@ export default function CeremonySection() {
         style={{
           // Mantener animación CSS pero optimizada
           animation: 'bounce1 1.5s ease 0s 1 normal forwards', // Más rápida
-          willChange: 'transform, opacity' // Optimización para móviles
+          willChange: 'transform, opacity', // Optimización para móviles
+          position: 'relative',
+          zIndex: 4000,
         }}
         className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl"
       >
-        <div className="max-w-4xl mx-auto">
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 4000,
+          }}
+          className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative w-full h-96 rounded-2xl shadow-lg overflow-hidden">
               <Image
@@ -62,7 +70,12 @@ export default function CeremonySection() {
               />
             </div>
 
-            <div className="space-y-6">
+            <div
+              style={{
+                position: 'relative',
+                zIndex: 4000,
+              }}
+              className="space-y-6">
               <div className="text-center">
                 <h2 className="font-script text-4xl text-secondary mb-4">
                   ITINERARIO
@@ -71,7 +84,12 @@ export default function CeremonySection() {
                   {ceremony.type}
                 </h3>
 
-                <div className="space-y-4">
+                <div
+                style={{
+                  position: 'relative',
+                  zIndex: 4000,
+                }}
+                 className="space-y-4">
                   <div className="flex items-center justify-center gap-2">
                     <Clock className="w-6 h-6 text-primary" />
                     <span className="text-2xl font-medium">{ceremony.time}</span>
@@ -86,6 +104,10 @@ export default function CeremonySection() {
                   </p>
 
                   <Button
+                  style={{
+                    position: 'relative',
+                    zIndex: 5000, // Asegurar que el botón esté por encima de otros elementos
+                  }}
                     onClick={()=> window.open(ceremony.ubiLink, '_blank')}
                     className="bg-slate-800 hover:text-black hover:bg-slate-400 text-white rounded-full px-8 py-3"
                   >

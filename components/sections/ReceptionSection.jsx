@@ -31,6 +31,7 @@ export default function ReceptionSection() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
+        zIndex: 5000, // Asegurar que la sección esté por encima de otros elementos
         ...animationStyle
       }}
      id="reception" className="py-20">
