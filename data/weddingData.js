@@ -7,7 +7,7 @@ export const weddingData = {
     initials: "I & C",
     quote: "Te elijo, hoy, mañana y siempre. En cada paso, en cada sueño, en cada latido...",
     mainImage: "/images/noviosEditado1.png",
-    sunsetImage: "/images/fondoCampo1.jpg"
+    sunsetImage: "/images/campo1.png"
   },
 
   // 👨‍👩‍👧‍👦 Información de los padres
@@ -26,7 +26,7 @@ export const weddingData = {
   // 📅 Información de fecha y evento
   wedding: {
     date: "2025-09-13T19:00:00",
-    dayName: "DOMINGO",
+    dayName: "SABADO",
     day: "13",
     month: "SEPTIEMBRE",
     year: "2025",
