@@ -138,11 +138,12 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
           onClick={handleOpen}
         >
           {/* Seal Shadow */}
-          <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125" />
+          <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125 pointer-events-none" />
 
           {/* Main Seal - Irregular wax shape */}
           <div
-            className="relative"
+            className="relative cursor-pointer"
+            onClick={handleOpen}
             style={{
               width: "110px",
               height: "110px",
@@ -162,7 +163,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
           >
             {/* Wax texture and depth */}
             <div
-              className="absolute inset-2"
+              className="absolute inset-2 pointer-events-none"
               style={{
                 background: `
                   radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
@@ -174,16 +175,16 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
             />
 
             {/* Embossed couple silhouette container */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div 
-                className="relative"
+                className="relative pointer-events-none"
                 style={{
                   filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.3))',
                   transform: 'rotate(5deg)'
                 }}
               >
                 {/* Couple silhouette SVG */}
-                <svg width="50" height="50" viewBox="0 0 100 100" className="opacity-80">
+                <svg width="50" height="50" viewBox="0 0 100 100" className="opacity-80 pointer-events-none">
                   {/* Female figure */}
                   <ellipse cx="35" cy="25" rx="8" ry="10" fill="rgba(127, 29, 29, 0.6)" />
                   <path 
@@ -216,7 +217,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                 
                 {/* Embossed highlight effect */}
                 <div 
-                  className="absolute top-2 left-3 w-4 h-3 rounded-full opacity-40"
+                  className="absolute top-2 left-3 w-4 h-3 rounded-full opacity-40 pointer-events-none"
                   style={{
                     background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)'
                   }}
@@ -226,7 +227,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
 
             {/* Realistic wax drips */}
             <div
-              className="absolute"
+              className="absolute pointer-events-none"
               style={{
                 bottom: '-8px',
                 left: '15px',
@@ -239,7 +240,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               }}
             />
             <div
-              className="absolute"
+              className="absolute pointer-events-none"
               style={{
                 bottom: '-5px',
                 right: '20px',
@@ -253,7 +254,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               }}
             />
             <div
-              className="absolute"
+              className="absolute pointer-events-none"
               style={{
                 bottom: '-3px',
                 left: '45px',
