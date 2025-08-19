@@ -43,10 +43,13 @@ export default function CeremonySection() {
       ></div>
 
       <div 
-      style={{
-        animation: 'bounce1 2s ease 0s 1 normal forwards'
-      }}
-      className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl">
+        style={{
+          // Mantener animación CSS pero optimizada
+          animation: 'bounce1 1.5s ease 0s 1 normal forwards', // Más rápida
+          willChange: 'transform, opacity' // Optimización para móviles
+        }}
+        className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative w-full h-96 rounded-2xl shadow-lg overflow-hidden">

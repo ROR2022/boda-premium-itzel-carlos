@@ -11,12 +11,13 @@ export default function DateSection() {
   const { wedding, messages, styling } = weddingData
   const { dateSection } = styling
 
-  // Configurar animación de scroll
+  // Configurar animación de scroll con fallback de carga inmediata
   const animationConfig = getAnimationConfig('date')
   const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
     animationConfig.options,
-    animationConfig.type,
-    animationConfig.delay
+    'fadeIn', // Animación más suave
+    animationConfig.delay,
+    true // Carga inmediata como fallback
   )
 
   return (
@@ -39,10 +40,12 @@ export default function DateSection() {
       ></div>
 
       <div 
-      style={{
-        animation: 'basic1 2s ease 0s 1 normal forwards'
-      }}
-      className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl">
+        style={{
+          // Remover animación CSS duplicada, usar solo scroll animation
+          willChange: 'transform, opacity' // Optimización para móviles
+        }}
+        className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl"
+      >
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <p className="text-lg text-muted-foreground italic">
             {messages.dateMessage}

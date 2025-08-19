@@ -211,7 +211,7 @@
 	0% {
 		animation-timing-function: ease-in;
 		opacity: 0;
-		transform: translateY(-250px);
+		transform: translateY(-150px); /* Menos agresivo para móviles */
 	}
 
 	38% {
@@ -222,7 +222,7 @@
 
 	55% {
 		animation-timing-function: ease-in;
-		transform: translateY(-65px);
+		transform: translateY(-40px); /* Menos agresivo */
 	}
 
 	72% {
@@ -232,7 +232,7 @@
 
 	81% {
 		animation-timing-function: ease-in;
-		transform: translateY(-28px);
+		transform: translateY(-15px); /* Menos agresivo */
 	}
 
 	90% {
@@ -242,7 +242,7 @@
 
 	95% {
 		animation-timing-function: ease-in;
-		transform: translateY(-8px);
+		transform: translateY(-5px); /* Menos agresivo */
 	}
 
 	100% {
@@ -380,6 +380,44 @@
     transform: none;
     opacity: 1;
     background-size: inherit;
+  }
+}
+
+/* 📱 Optimizaciones específicas para móviles */
+@media (max-width: 768px) {
+  /* Reducir intensidad de animaciones en móviles */
+  .animate-fadeIn-hidden {
+    transform: translateY(15px); /* Menos movimiento */
+  }
+  
+  .animate-slideUp-hidden {
+    transform: translateY(25px); /* Menos movimiento */
+  }
+  
+  .animate-slideLeft-hidden,
+  .animate-slideRight-hidden {
+    transform: translateX(25px); /* Menos movimiento */
+  }
+  
+  /* Transiciones más rápidas en móviles */
+  .animate-fadeIn-visible,
+  .animate-slideUp-visible,
+  .animate-slideLeft-visible,
+  .animate-slideRight-visible {
+    transition: all 0.4s ease-out; /* Más rápido */
+  }
+  
+  /* Optimización de performance para móviles */
+  [style*="willChange"] {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Asegurar que los elementos sean visibles por defecto en móviles */
+  .bg-slate-300.bg-opacity-60 {
+    min-height: fit-content;
+    opacity: 1 !important; /* Fallback para evitar contenido invisible */
   }
 }
 

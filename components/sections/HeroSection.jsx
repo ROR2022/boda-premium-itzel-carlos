@@ -12,12 +12,13 @@ export default function HeroSection() {
   const { couple, wedding, styling } = weddingData
   const { heroSection } = styling
   
-  // Configurar animación de scroll
+  // Solo usar animación de background para el Hero, no scroll animations
   const animationConfig = getAnimationConfig('reception')
   const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
     animationConfig.options,
-    animationConfig.type,
-    animationConfig.delay
+    'background', // Solo animar el background
+    0, // Sin delay
+    false // No carga inmediata para el background
   )
 
   return (
@@ -41,12 +42,14 @@ export default function HeroSection() {
         className="absolute inset-0 z-0"
       ></div>
       
-      {/* Contenido principal */}
+      {/* Contenido principal - Usar solo animación CSS, no scroll-based */}
       <div 
-      style={{
-        animation: 'entrada1 2s ease 0s 1 normal forwards'
-      }}
-      className="bg-slate-300 bg-opacity-60 p-6 rounded-2xl relative z-10 text-center space-y-6 px-4">
+        style={{
+          animation: 'entrada1 2s ease 0s 1 normal forwards',
+          willChange: 'transform, opacity' // Optimización para móviles
+        }}
+        className="bg-slate-300 bg-opacity-60 p-6 rounded-2xl relative z-10 text-center space-y-6 px-4"
+      >
         <h1 className="font-script text-6xl md:text-8xl text-foreground mb-4">
           {wedding.title.split(' ').map((word, index) => (
             <span key={index}>
