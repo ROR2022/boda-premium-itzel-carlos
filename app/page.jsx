@@ -18,14 +18,14 @@ export default function WeddingInvitation() {
     <div className="min-h-screen bg-background">
       {/* <Navigation /> */}
       <HeroSection />
-      <ParentsSection />
+      {/* <ParentsSection /> */}
       <DateSection />
       <CeremonySection />
       <ReceptionSection />
       <TimelineSection />
       <DressCodeSection />
       <GiftsSection />
-      <GallerySection />
+      {/* <GallerySection /> */}
       
       {/* 🎵 Reproductor de audio fijo */}
       <AudioPlayer />

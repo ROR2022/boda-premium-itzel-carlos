@@ -7,7 +7,7 @@ export const weddingData = {
     initials: "I & C",
     quote: "Te elijo, hoy, mañana y siempre. En cada paso, en cada sueño, en cada latido...",
     mainImage: "/images/novios2.png",
-    sunsetImage: "/images/couple-sunset.png"
+    sunsetImage: "/images/fondoCampo1.jpg"
   },
 
   // 👨‍👩‍👧‍👦 Información de los padres
@@ -25,20 +25,21 @@ export const weddingData = {
 
   // 📅 Información de fecha y evento
   wedding: {
-    date: "2025-12-28T18:00:00",
-    dayName: "SÁBADO",
-    day: "28",
-    month: "DICIEMBRE",
+    date: "2025-09-13T19:00:00",
+    dayName: "DOMINGO",
+    day: "13",
+    month: "SEPTIEMBRE",
     year: "2025",
     title: "Nos Casamos"
   },
 
   // ⛪ Información de la ceremonia
   ceremony: {
-    time: "6:00 p.m",
-    name: "Catedral de puebla",
-    address: "C. 16 de Septiembre s/n, Centro histórico de Puebla, 72000 Heroica Puebla de Zaragoza, Pue.",
-    type: "Misa"
+    time: "7:00 p.m",
+    name: "Monarcas Jardin de Eventos",
+    address: "Calz de los Monarcas 140, Villas del Rey Segunda Etapa, 21354 Mexicali, B.C.",
+    type: "Ceremonia",
+    ubiLink: "https://maps.app.goo.gl/VuchGrZ6ySK6k25s5"
   },
 
   // 🎉 Información de la recepción
@@ -122,6 +123,22 @@ export const weddingData = {
       overlayColorSecondary: "rgba(255, 255, 255, 0)", // Transparente
       // Configuración de degradado personalizada
       gradientDirection: "circle at center" // Para radial: 'circle at center', para lineal: 'to bottom'
+    },
+    dateSection: {
+      backgroundImage: "/images/mesaFlores1.jpg",
+      overlayOpacity: 0.95,
+      overlayType: "gradient-radial",
+      overlayColor: "rgba(255, 255, 255, 1)",
+      overlayColorSecondary: "rgba(255, 255, 255, 0)",
+      gradientDirection: "circle at center"
+    },
+    ceremonySection: {
+      backgroundImage: "/images/boda1.png",
+      overlayOpacity: 0.95,
+      overlayType: "gradient-radial",
+      overlayColor: "rgba(255, 255, 255, 1)",
+      overlayColorSecondary: "rgba(255, 255, 255, 0)",
+      gradientDirection: "circle at center"
     }
   },
 

@@ -4,38 +4,15 @@ import React from 'react'
 import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { weddingData } from '../../data/weddingData'
+import { getOverlayStyle } from '@/utils/overlay'
+
+  
 
 export default function HeroSection() {
   const { couple, wedding, styling } = weddingData
   const { heroSection } = styling
 
-  // Función para generar el estilo del overlay según el tipo
-  const getOverlayStyle = () => {
-    const { overlayType, overlayOpacity, overlayColor, overlayColorSecondary, gradientDirection } = heroSection
-    
-    switch (overlayType) {
-      case 'solid':
-        return {
-          backgroundColor: overlayColor.replace('1)', `${overlayOpacity})`)
-        }
-      case 'gradient-top':
-        return {
-          background: `linear-gradient(to bottom, ${overlayColor.replace('1)', `${overlayOpacity})`)} 0%, ${overlayColorSecondary} 100%)`
-        }
-      case 'gradient-bottom':
-        return {
-          background: `linear-gradient(to top, ${overlayColor.replace('1)', `${overlayOpacity})`)} 0%, ${overlayColorSecondary} 100%)`
-        }
-      case 'gradient-radial':
-        return {
-          background: `radial-gradient(${gradientDirection}, ${overlayColorSecondary} 0%, ${overlayColor.replace('1)', `${overlayOpacity})`)} 100%)`
-        }
-      default:
-        return {
-          backgroundColor: overlayColor.replace('1)', `${overlayOpacity})`)
-        }
-    }
-  }
+
 
   return (
     <section 
@@ -44,19 +21,24 @@ export default function HeroSection() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        position: 'relative'
+        position: 'relative',
+        animation: 'fondo1 2s ease 0s 1 normal forwards'
       }}
       id="home" 
-      className="min-h-screen flex flex-col justify-center items-center relative pt-20"
+      className="min-h-screen flex flex-col justify-center items-center relative py-20"
     >
       {/* Overlay configurable */}
       <div 
-        style={getOverlayStyle()}
+        style={getOverlayStyle(heroSection)}
         className="absolute inset-0 z-0"
       ></div>
       
       {/* Contenido principal */}
-      <div className="bg-slate-300 bg-opacity-60 p-6 rounded-2xl relative z-10 text-center space-y-6 px-4">
+      <div 
+      style={{
+        animation: 'entrada1 2s ease 0s 1 normal forwards'
+      }}
+      className="bg-slate-300 bg-opacity-60 p-6 rounded-2xl relative z-10 text-center space-y-6 px-4">
         <h1 className="font-script text-6xl md:text-8xl text-foreground mb-4">
           {wedding.title.split(' ').map((word, index) => (
             <span key={index}>
