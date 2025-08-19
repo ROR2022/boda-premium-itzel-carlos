@@ -45,7 +45,7 @@ export default function WeddingInvitation() {
   return (
     <div className="min-h-screen bg-background">
       {/* <Navigation /> */}
-      <DecorationElement />
+      {/* <DecorationElement /> */}
       <HeroSection />
       {/* <ParentsSection /> */}
       <DateSection />

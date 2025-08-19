@@ -23,10 +23,10 @@ export default function TimelineSection() {
     <section
       ref={sectionRef}
       style={{
-        backgroundImage: `url('${timelineSection.backgroundImage}')`,
+        /* backgroundImage: `url('${timelineSection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
         ...animationStyle
       }}

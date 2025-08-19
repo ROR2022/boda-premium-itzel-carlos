@@ -26,7 +26,7 @@ export default function HeroSection() {
       ref={sectionRef}
       style={{
         //border:'2px solid #000',
-        backgroundImage: `url('${heroSection.backgroundImage}')`,
+        backgroundImage: `url('/images/novios1.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -59,7 +59,9 @@ export default function HeroSection() {
           ))}
         </h1>
 
-        <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-8 border-white shadow-2xl">
+        <div 
+        style={{display:'none'}}
+        className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-8 border-white shadow-2xl">
           <Image
             src={couple.mainImage}
             alt={`${couple.bride} y ${couple.groom}`}

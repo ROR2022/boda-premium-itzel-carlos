@@ -27,10 +27,10 @@ export default function CeremonySection() {
     <section 
       ref={sectionRef}
       style={{
-        backgroundImage: `url('${ceremonySection.backgroundImage}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        //backgroundImage: `url('${ceremonySection.backgroundImage}')`,
+        //backgroundSize: 'cover',
+        //backgroundPosition: 'center',
+        //backgroundRepeat: 'no-repeat',
         position: 'relative',
         zIndex: 5000,
         ...animationStyle

@@ -23,10 +23,10 @@ export default function GiftsSection() {
     <section
       ref={sectionRef}
       style={{
-        backgroundImage: `url('${giftsSection.backgroundImage}')`,
+        /* backgroundImage: `url('${giftsSection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
         ...animationStyle
       }}

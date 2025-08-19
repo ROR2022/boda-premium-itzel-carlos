@@ -29,10 +29,10 @@ export default function DressCodeSection() {
       id="dresscode"
       className="py-20"
       style={{
-        backgroundImage: `url('${dressCodeSection.backgroundImage}')`,
+        /* backgroundImage: `url('${dressCodeSection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
         zIndex: 5000, // Asegurar que la sección esté por encima de otros elementos
         ...animationStyle
