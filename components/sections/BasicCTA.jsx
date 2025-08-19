@@ -1,9 +1,19 @@
 import React from 'react'
 import { Heart } from 'lucide-react'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 const BasicCTA = () => {
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('cta')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
+
   return (
-    <div>
+    <div ref={sectionRef} style={animationStyle}>
          {/* CTA - Sección de llamada a la acción premium */}
         <div className="mt-8 relative overflow-hidden bg-slate-300 bg-opacity-60 rounded-3xl p-8 md:p-12 mb-8 shadow-2xl">
           

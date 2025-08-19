@@ -4,20 +4,31 @@ import React from 'react'
 import CountdownTimer from '../countdown-timer'
 import { weddingData } from '../../data/weddingData'
 import { getOverlayStyle } from '@/utils/overlay'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 export default function DateSection() {
   const { wedding, messages, styling } = weddingData
   const { dateSection } = styling
 
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('date')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
+
   return (
     <section 
-    style={{
+      ref={sectionRef}
+      style={{
         backgroundImage: `url('${dateSection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-        animation: 'atencion1 2s ease 0s 1 normal forwards',
+        ...animationStyle
       }}
     id="date" className="py-20 bg-primary/10">
 

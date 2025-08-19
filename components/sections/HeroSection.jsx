@@ -5,24 +5,30 @@ import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { weddingData } from '../../data/weddingData'
 import { getOverlayStyle } from '@/utils/overlay'
-
-  
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 export default function HeroSection() {
   const { couple, wedding, styling } = weddingData
   const { heroSection } = styling
-
-
+  
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('hero')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
 
   return (
     <section 
+      ref={sectionRef}
       style={{
         backgroundImage: `url('${heroSection.backgroundImage}')`,
-        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-        animation: 'fondo1 2s ease 0s 1 normal forwards'
+        ...animationStyle
       }}
       id="home" 
       className="min-h-screen flex flex-col justify-center items-center relative py-20"

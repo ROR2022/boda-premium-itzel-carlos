@@ -6,7 +6,7 @@ export const weddingData = {
     groom: "Carlos",
     initials: "I & C",
     quote: "Te elijo, hoy, mañana y siempre. En cada paso, en cada sueño, en cada latido...",
-    mainImage: "/images/novios2.png",
+    mainImage: "/images/noviosEditado1.png",
     sunsetImage: "/images/fondoCampo1.jpg"
   },
 
@@ -57,21 +57,21 @@ export const weddingData = {
       id: "ceremonia",
       name: "Ceremonia",
       time: "7:00",
-      icon: "V",
+      icon: "💍", // Anillo de compromiso - símbolo universal del matrimonio
       color: "primary"
     },
     {
       id: "brindis",
       name: "Brindis",
       time: "8:00",
-      icon: "B",
+      icon: "🥂", // Copas de champagne - celebración y brindis
       color: "secondary"
     },
     {
       id: "cena",
       name: "Cena",
       time: "8:30",
-      icon: "C",
+      icon: "🍽️", // Plato con cubiertos - cena elegante
       color: "primary"
     }
   ],

@@ -7,21 +7,32 @@ import { Button } from '../ui/button'
 import { weddingData } from '../../data/weddingData'
 import { useMapNavigation } from '../../hooks/useMapNavigation'
 import { getOverlayStyle } from '@/utils/overlay'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 export default function CeremonySection() {
   const { ceremony, couple, styling } = weddingData
   const { goToCeremony } = useMapNavigation()
   const { ceremonySection } = styling
 
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('ceremony')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
+
   return (
     <section 
-    style={{
+      ref={sectionRef}
+      style={{
         backgroundImage: `url('${ceremonySection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-        animation: 'fondo1 2s ease 0s 1 normal forwards'
+        ...animationStyle
       }}
     id="ceremony" className="py-20">
 

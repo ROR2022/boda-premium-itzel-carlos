@@ -7,14 +7,25 @@ import { Card, CardContent } from '../ui/card'
 import { weddingData } from '../../data/weddingData'
 import { useWhatsApp } from '../../hooks/useWhatsApp'
 import { getOverlayStyle } from '@/utils/overlay'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 export default function DressCodeSection() {
   const { dressCode, styling } = weddingData
   const { confirmAttendance } = useWhatsApp()
   const { dressCodeSection } = styling
 
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('dressCode')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
+
   return (
     <section
+      ref={sectionRef}
       id="dresscode"
       className="py-20"
       style={{
@@ -23,7 +34,7 @@ export default function DressCodeSection() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-        animation: 'fondo1 2s ease 0s 1 normal forwards'
+        ...animationStyle
       }}
     >
       {/* Overlay configurable */}

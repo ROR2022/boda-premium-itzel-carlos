@@ -284,3 +284,135 @@
     animation-timing-function: ease-out;
   }
 }
+
+/* 🎬 Scroll-based Animations - Clases CSS para animaciones por scroll */
+
+/* Animaciones de fade */
+.animate-fadeIn-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animate-fadeIn-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease-out;
+}
+
+/* Animaciones de slide */
+.animate-slideUp-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.animate-slideUp-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
+}
+
+.animate-slideLeft-hidden {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.animate-slideLeft-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.7s ease-out;
+}
+
+.animate-slideRight-hidden {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.animate-slideRight-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.7s ease-out;
+}
+
+/* Animaciones de zoom */
+.animate-zoom-hidden {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.animate-zoom-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.6s ease-out;
+}
+
+/* Animaciones de bounce */
+.animate-bounce-hidden {
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+.animate-bounce-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Animaciones de background */
+.animate-background-hidden {
+  background-size: 100%;
+}
+
+.animate-background-visible {
+  background-size: 150%;
+  transition: background-size 2s ease-out;
+}
+
+/* Respeto por preferencias de motion reducido */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn-visible,
+  .animate-slideUp-visible,
+  .animate-slideLeft-visible,
+  .animate-slideRight-visible,
+  .animate-zoom-visible,
+  .animate-bounce-visible,
+  .animate-background-visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
+    background-size: inherit;
+  }
+}
+
+/* 🎬 Timeline Animations - Animaciones específicas para timeline */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animación para el contenedor del timeline */
+@keyframes timelineContainer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto hover mejorado para elementos de timeline */
+.timeline-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item:hover {
+  transform: translateX(8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}

@@ -4,20 +4,31 @@ import React from 'react'
 import Image from 'next/image'
 import { weddingData } from '../../data/weddingData'
 import { getOverlayStyle } from '@/utils/overlay'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 export default function TimelineSection() {
   const { timeline, messages, styling } = weddingData
   const { timelineSection } = styling
 
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('timeline')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
+
   return (
     <section
-    style={{
+      ref={sectionRef}
+      style={{
         backgroundImage: `url('${timelineSection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-        animation: 'fondo1 2s ease 0s 1 normal forwards'
+        ...animationStyle
       }}
      id="timeline" className="py-20">
       {/* Overlay configurable */}
@@ -44,21 +55,32 @@ export default function TimelineSection() {
               />
             </div>
 
-            <div className="space-y-8">
-              {timeline.map((item) => (
+            <div className="space-y-6">
+              {timeline.map((item, index) => (
                 <div 
                   key={item.id} 
-                  className="flex items-center gap-4 p-4 bg-card rounded-lg"
+                  className="flex items-center gap-4 p-5 bg-card rounded-xl hover:bg-slate-50 hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
+                  style={{
+                    animation: `slideInRight 0.6s ease-out ${index * 0.2}s both`
+                  }}
                 >
                   <div 
-                    className={`w-12 h-12 ${
+                    className={`w-16 h-16 ${
                       item.color === 'primary' ? 'bg-primary' : 'bg-secondary'
-                    } rounded-full flex items-center justify-center`}
+                    } rounded-full flex items-center justify-center shadow-lg border-2 border-white/20 relative overflow-hidden`}
                   >
-                    <span className="text-white font-bold">{item.icon}</span>
+                    {/* Efecto de brillo sutil */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent rounded-full"></div>
+                    <span 
+                      className="text-2xl filter drop-shadow-sm relative z-10"
+                      role="img" 
+                      aria-label={item.name}
+                    >
+                      {item.icon}
+                    </span>
                   </div>
-                  <div>
-                    <div className="font-medium text-lg">{item.name}</div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-lg text-card-foreground mb-1">{item.name}</div>
                     <div 
                       className={`text-2xl font-bold ${
                         item.color === 'primary' ? 'text-primary' : 'text-secondary'
@@ -67,6 +89,9 @@ export default function TimelineSection() {
                       {item.time}
                     </div>
                   </div>
+                  
+                  {/* Indicador de conexión visual */}
+                  <div className="hidden md:block w-2 h-2 bg-current opacity-30 rounded-full"></div>
                 </div>
               ))}
 

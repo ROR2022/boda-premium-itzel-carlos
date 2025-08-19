@@ -6,21 +6,32 @@ import { Button } from '../ui/button'
 import { weddingData } from '../../data/weddingData'
 import { useMapNavigation } from '../../hooks/useMapNavigation'
 import { getOverlayStyle } from '@/utils/overlay'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
+import { getAnimationConfig } from '@/data/animationConfig'
 
 export default function ReceptionSection() {
   const { reception, couple, styling } = weddingData
   const { goToReception } = useMapNavigation()
   const { receptionSection } = styling
 
+  // Configurar animación de scroll
+  const animationConfig = getAnimationConfig('reception')
+  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    animationConfig.options,
+    animationConfig.type,
+    animationConfig.delay
+  )
+
   return (
     <section
-    style={{
+      ref={sectionRef}
+      style={{
         backgroundImage: `url('${receptionSection.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-        animation: 'fondo1 2s ease 0s 1 normal forwards'
+        ...animationStyle
       }}
      id="reception" className="py-20">
 
