@@ -179,6 +179,10 @@ export const weddingData = {
   // 🎵 Configuración de audio
   audio: {
     src: "/audio/musica.mp3",
+    fallbacks: [
+      "/audio/musica.ogg",
+      "/audio/musica.wav"
+    ],
     title: "Música de Fondo de Boda",
     startTime: 13,        // 0:13 - Donde empieza la letra
     endTime: 85,          // 1:25 - Final del segmento
