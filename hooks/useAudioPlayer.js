@@ -46,9 +46,9 @@ export const useAudioPlayer = (audioConfig) => {
 
     const audio = new Audio()
     
-    // Configuración específica para iOS
+        // Configuración específica para iOS
     if (isIOS) {
-      audio.preload = "none"  // iOS no respeta "metadata" bien
+      audio.preload = "metadata"  // Cambiar de "none" a "metadata" para iOS
       audio.crossOrigin = "anonymous"  // Evitar problemas CORS en iOS
     } else {
       audio.preload = preload
@@ -60,27 +60,43 @@ export const useAudioPlayer = (audioConfig) => {
 
     // Event listeners mejorados para iOS
     audio.addEventListener('loadstart', () => {
+      console.log('📱 Audio loadstart - iniciando carga...')
       setIsLoading(true)
       setError(null)
     })
 
     audio.addEventListener('loadeddata', () => {
+      console.log('✅ Audio loadeddata - datos cargados')
       setIsLoading(false)
-      console.log('Audio loaded successfully')
+    })
+
+    audio.addEventListener('loadedmetadata', () => {
+      console.log('📊 Audio loadedmetadata - metadatos cargados')
+      setIsLoading(false)
     })
 
     audio.addEventListener('canplay', () => {
+      console.log('🎵 Audio canplay - listo para reproducir')
       setIsLoading(false)
-      console.log('Audio can play')
     })
 
     audio.addEventListener('canplaythrough', () => {
+      console.log('✅ Audio canplaythrough - puede reproducir completamente')
       setIsLoading(false)
-      console.log('Audio can play through')
     })
+
+    // Timeout para evitar carga infinita en iOS
+    const loadingTimeout = setTimeout(() => {
+      if (isIOS) {
+        console.warn('⏰ Timeout de carga en iOS - forzando finalización')
+        setIsLoading(false)
+        setError('Toca el botón para activar audio en iOS')
+      }
+    }, 8000) // 8 segundos timeout
 
     audio.addEventListener('error', (e) => {
       console.error('❌ Audio error:', e)
+      clearTimeout(loadingTimeout)
       const error = audio.error
       
       let errorMessage = 'Error al cargar el audio'
@@ -160,6 +176,7 @@ export const useAudioPlayer = (audioConfig) => {
 
     return () => {
       // Cleanup
+      clearTimeout(loadingTimeout)
       audio.pause()
       audio.removeEventListener('loadstart', () => {})
       audio.removeEventListener('canplay', () => {})
@@ -280,8 +297,44 @@ export const useAudioPlayer = (audioConfig) => {
 
   // Función para alternar play/pause - Mejorada para iOS
   const toggle = useCallback(async () => {
-    if (isLoading) return // No permitir acciones mientras carga
-    
+    const audio = audioRef.current
+    if (!audio) return
+
+    // Si está en iOS y está cargando, forzar la carga
+    const isIOS = isIOSDevice()
+    if (isIOS && isLoading) {
+      console.log('🔄 iOS: Forzando carga por interacción del usuario...')
+      setIsLoading(false)
+      setError(null)
+      
+      try {
+        // Forzar carga manual en iOS
+        audio.load()
+        await new Promise((resolve) => {
+          const onCanPlay = () => {
+            audio.removeEventListener('canplay', onCanPlay)
+            resolve()
+          }
+          audio.addEventListener('canplay', onCanPlay, { once: true })
+          
+          // Timeout de seguridad
+          setTimeout(() => {
+            audio.removeEventListener('canplay', onCanPlay)
+            resolve()
+          }, 3000)
+        })
+        
+        // Intentar reproducir inmediatamente
+        await play()
+        return
+      } catch (err) {
+        console.error('Error forzando carga en iOS:', err)
+        setError('Toca de nuevo para activar audio')
+        return
+      }
+    }
+
+    // Comportamiento normal
     if (isPlaying) {
       pause()
     } else {
