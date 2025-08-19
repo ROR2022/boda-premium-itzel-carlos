@@ -30,7 +30,11 @@ function AudioPlayer() {
   }
 
   return (
-    <div className="fixed bottom-10 right-10 z-50 group bg-slate-500 rounded-xl p-1">
+    <div 
+    style={{
+      zIndex: 6000,
+    }}
+    className="fixed bottom-10 right-10 group bg-slate-500 rounded-xl p-1">
       <div className="relative">
         
         {/* Anillo de progreso */}
