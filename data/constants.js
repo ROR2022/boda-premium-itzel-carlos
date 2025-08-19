@@ -1,19 +1,19 @@
 // 📞 Constants - Configuraciones y constantes del proyecto
 
-// 📱 Números de teléfono
+// 📱 Números de teléfono +52 1 686 261 8688
 export const PHONE_NUMBERS = {
-  rsvp: "1234567890" // Reemplazar con el número real de WhatsApp
+  rsvp: "526862618688" // Reemplazar con el número real de WhatsApp
 }
 
 // 📍 Ubicaciones para Google Maps
 export const LOCATIONS = {
-  ceremony: "Catedral de Puebla, C. 16 de Septiembre s/n, Centro histórico de Puebla, 72000 Heroica Puebla de Zaragoza, Pue.",
-  reception: "Salón el Recuerdo, Blvd. San Felipe 2615-A, Zona Sin Asignación de Nombre de Col 15, Rancho Colorado, 72040 Heroica Puebla de Zaragoza, Pue."
+  ceremony: "Calz de los Monarcas 140, Villas del Rey Segunda Etapa, 21354 Mexicali, B.C.",
+  reception: "Calz de los Monarcas 140, Villas del Rey Segunda Etapa, 21354 Mexicali, B.C."
 }
 
 // 💬 Templates de mensajes para WhatsApp
 export const WHATSAPP_MESSAGES = {
-  rsvp: "¡Hola! Confirmo mi asistencia a la boda de Alejandra y Gerardo el 28 de diciembre de 2025."
+  rsvp: "¡Hola! Confirmo mi asistencia a la boda de Itzel y Carlos el 13 de septiembre de 2025."
 }
 
 // 🎨 Configuraciones de tema
@@ -60,7 +60,7 @@ export const IMAGE_PATHS = {
 
 // ⚙️ Configuraciones de la aplicación
 export const APP_CONFIG = {
-  title: "Alejandra & Gerardo - Invitación de Boda",
-  description: "Te invitamos a celebrar nuestro amor - 28 de Diciembre 2025",
+  title: "Itzel & Carlos - Invitación de Boda",
+  description: "Te invitamos a celebrar nuestro amor - 13 de Septiembre 2025",
   language: "es"
 }

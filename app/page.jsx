@@ -2,15 +2,16 @@
 
 //import Navigation from "../components/navigation"
 import HeroSection from "../components/sections/HeroSection"
-import ParentsSection from "../components/sections/ParentsSection"
+//import ParentsSection from "../components/sections/ParentsSection"
 import DateSection from "../components/sections/DateSection"
 import CeremonySection from "../components/sections/CeremonySection"
 import ReceptionSection from "../components/sections/ReceptionSection"
 import TimelineSection from "../components/sections/TimelineSection"
 import DressCodeSection from "../components/sections/DressCodeSection"
 import GiftsSection from "../components/sections/GiftsSection"
-import GallerySection from "../components/sections/GallerySection"
+//import GallerySection from "../components/sections/GallerySection"
 import AudioPlayer from "../components/AudioPlayer"
+import BasicCTA from "../components/sections/BasicCTA"
 
 export default function WeddingInvitation() {
 
@@ -26,6 +27,7 @@ export default function WeddingInvitation() {
       <DressCodeSection />
       <GiftsSection />
       {/* <GallerySection /> */}
+      <BasicCTA />
       
       {/* 🎵 Reproductor de audio fijo */}
       <AudioPlayer />

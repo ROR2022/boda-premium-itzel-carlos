@@ -44,39 +44,41 @@ export const weddingData = {
 
   // 🎉 Información de la recepción
   reception: {
-    time: "7:00 pm",
-    name: "Salón el Recuerdo",
-    address: "Blvd. San Felipe 2615-A, Zona Sin Asignación de Nombre de Col 15, Rancho Colorado, 72040 Heroica Puebla de Zaragoza, Pue."
+    time: "8:00 pm",
+    name: "Monarcas Jardin de Eventos",
+    address: "Calz de los Monarcas 140, Villas del Rey Segunda Etapa, 21354 Mexicali, B.C.",
+    type: "Recepción",
+    ubiLink: "https://maps.app.goo.gl/VuchGrZ6ySK6k25s5"
   },
 
   // ⏰ Timeline del evento
   timeline: [
     {
-      id: "vals",
-      name: "Vals",
-      time: "8:00",
+      id: "ceremonia",
+      name: "Ceremonia",
+      time: "7:00",
       icon: "V",
       color: "primary"
     },
     {
       id: "brindis",
       name: "Brindis",
-      time: "9:00",
+      time: "8:00",
       icon: "B",
       color: "secondary"
     },
     {
-      id: "banquete",
-      name: "Banquete",
-      time: "10:00",
-      icon: "B",
+      id: "cena",
+      name: "Cena",
+      time: "8:30",
+      icon: "C",
       color: "primary"
     }
   ],
 
   // 👗 Código de vestimenta
   dressCode: {
-    type: "Formal",
+    type: "Formal de gala",
     note: "Se reserva el color blanco para la novia",
     confirmationMessage: "¡Quiero compartir este momento tan esperado contigo! Por favor ayúdanos confirmando tu asistencia"
   },
@@ -139,7 +141,39 @@ export const weddingData = {
       overlayColor: "rgba(255, 255, 255, 1)",
       overlayColorSecondary: "rgba(255, 255, 255, 0)",
       gradientDirection: "circle at center"
-    }
+    },
+    receptionSection: {
+      backgroundImage: "/images/boda1.png",
+      overlayOpacity: 0.95,
+      overlayType: "gradient-radial",
+      overlayColor: "rgba(255, 255, 255, 1)",
+      overlayColorSecondary: "rgba(255, 255, 255, 0)",
+      gradientDirection: "circle at center"
+    },
+    timelineSection: {
+      backgroundImage: "/images/boda1.png",
+      overlayOpacity: 0.95,
+      overlayType: "gradient-radial",
+      overlayColor: "rgba(255, 255, 255, 1)",
+      overlayColorSecondary: "rgba(255, 255, 255, 0)",
+      gradientDirection: "circle at center"
+    },
+    dressCodeSection: {
+      backgroundImage: "/images/boda1.png",
+      overlayOpacity: 0.95,
+      overlayType: "gradient-radial",
+      overlayColor: "rgba(255, 255, 255, 1)",
+      overlayColorSecondary: "rgba(255, 255, 255, 0)",
+      gradientDirection: "circle at center"
+    },
+    giftsSection: {
+      backgroundImage: "/images/boda1.png",
+      overlayOpacity: 0.95,
+      overlayType: "gradient-radial",
+      overlayColor: "rgba(255, 255, 255, 1)",
+      overlayColorSecondary: "rgba(255, 255, 255, 0)",
+      gradientDirection: "circle at center"
+    },
   },
 
   // 🎵 Configuración de audio

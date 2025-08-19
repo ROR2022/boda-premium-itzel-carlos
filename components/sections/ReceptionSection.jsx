@@ -5,14 +5,36 @@ import { MapPin, Clock } from 'lucide-react'
 import { Button } from '../ui/button'
 import { weddingData } from '../../data/weddingData'
 import { useMapNavigation } from '../../hooks/useMapNavigation'
+import { getOverlayStyle } from '@/utils/overlay'
 
 export default function ReceptionSection() {
-  const { reception, couple } = weddingData
+  const { reception, couple, styling } = weddingData
   const { goToReception } = useMapNavigation()
+  const { receptionSection } = styling
 
   return (
-    <section id="reception" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section
+    style={{
+        backgroundImage: `url('${receptionSection.backgroundImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        animation: 'fondo1 2s ease 0s 1 normal forwards'
+      }}
+     id="reception" className="py-20">
+
+      {/* Overlay configurable */}
+      <div
+        style={getOverlayStyle(receptionSection)}
+        className="absolute inset-0 z-0"
+      ></div>
+
+      <div 
+      style={{
+        animation: 'bounce1 2s ease 0s 1 normal forwards'
+      }}
+      className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="text-8xl text-secondary font-script mb-4">
             {couple.initials}
@@ -35,8 +57,8 @@ export default function ReceptionSection() {
             </p>
 
             <Button
-              onClick={goToReception}
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-3"
+              onClick={()=>window.open(reception.ubiLink, '_blank')}
+              className="bg-slate-800 hover:text-black hover:bg-slate-400 text-white rounded-full px-8 py-3"
             >
               <MapPin className="w-4 h-4 mr-2" />
               Ir al mapa
