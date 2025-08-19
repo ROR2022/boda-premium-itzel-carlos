@@ -17,7 +17,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
   }
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-amber-50 via-stone-100 to-amber-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gradient-to-br from-amber-50 via-stone-100 to-amber-50 flex items-center justify-center z-[60]">
       <div className="relative">
         {/* Envelope Base */}
         <div
