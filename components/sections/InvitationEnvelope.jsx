@@ -136,27 +136,11 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
           }`}
           style={{ top: '120px' }}
         >
-          {/* Capa clickeable transparente que cubre todo el sello - FUERA de transforms */}
+          {/* Main Seal - Irregular wax shape with click handler */}
           <div
-            className="absolute cursor-pointer"
+            className="relative cursor-pointer"
             onClick={handleOpen}
-            style={{
-              top: 0,
-              left: 0,
-              width: "110px",
-              height: "110px",
-              zIndex: 9999,
-              backgroundColor: "transparent"
-            }}
             title="Haz clic para abrir la invitación"
-          />
-
-          {/* Seal Shadow */}
-          <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125 pointer-events-none" />
-
-          {/* Main Seal - Irregular wax shape */}
-          <div
-            className="relative"
             style={{
               width: "110px",
               height: "110px",
@@ -171,9 +155,13 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                 inset 0 2px 4px rgba(255, 255, 255, 0.15),
                 inset -2px -2px 6px rgba(127, 29, 29, 0.4)
               `,
-              transform: 'rotate(-5deg)'
+              transform: 'rotate(-5deg)',
+              zIndex: 10
             }}
           >
+            {/* Seal Shadow */}
+            <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125 pointer-events-none" style={{ zIndex: -1 }} />
+
             {/* Wax texture and depth */}
             <div
               className="absolute inset-2 pointer-events-none"
