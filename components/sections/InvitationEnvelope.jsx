@@ -134,12 +134,32 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
           className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-300 hover:scale-105 ${
             isOpening ? "animate-pulse" : ""
           }`}
-          style={{ top: '120px' }}
+          style={{ 
+            top: '120px',
+            zIndex: 20
+          }}
         >
+          {/* Seal Shadow - moved outside clickable area */}
+          <div 
+            className="absolute bg-red-900/30 rounded-full blur-xl pointer-events-none" 
+            style={{ 
+              top: '3px',
+              left: '-7px',
+              width: '124px',
+              height: '124px',
+              zIndex: -1,
+              transform: 'rotate(-5deg)'
+            }} 
+          />
+          
           {/* Main Seal - Irregular wax shape with click handler */}
           <div
-            className="relative cursor-pointer"
+            className="relative cursor-pointer select-none"
             onClick={handleOpen}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              handleOpen();
+            }}
             title="Haz clic para abrir la invitación"
             style={{
               width: "110px",
@@ -156,11 +176,11 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                 inset -2px -2px 6px rgba(127, 29, 29, 0.4)
               `,
               transform: 'rotate(-5deg)',
-              zIndex: 10
+              zIndex: 10,
+              position: 'relative',
+              isolation: 'isolate'
             }}
           >
-            {/* Seal Shadow */}
-            <div className="absolute inset-0 bg-red-900/30 rounded-full blur-xl transform translate-y-3 scale-125 pointer-events-none" style={{ zIndex: -1 }} />
 
             {/* Wax texture and depth */}
             <div
@@ -225,49 +245,53 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                 />
               </div>
             </div>
-
-            {/* Realistic wax drips */}
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                bottom: '-8px',
-                left: '15px',
-                width: '8px',
-                height: '14px',
-                background: 'linear-gradient(180deg, #b91c1c 0%, #991b1b 60%, #7f1d1d 100%)',
-                borderRadius: '40% 60% 80% 20% / 80% 80% 20% 20%',
-                opacity: 0.9,
-                boxShadow: 'inset -1px 0 2px rgba(0,0,0,0.3)'
-              }}
-            />
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                bottom: '-5px',
-                right: '20px',
-                width: '5px',
-                height: '9px',
-                background: 'linear-gradient(180deg, #dc2626 0%, #b91c1c 70%, #991b1b 100%)',
-                borderRadius: '50% 50% 70% 30% / 70% 70% 30% 30%',
-                opacity: 0.85,
-                transform: 'rotate(8deg)',
-                boxShadow: 'inset -1px 0 2px rgba(0,0,0,0.2)'
-              }}
-            />
-            <div
-              className="absolute pointer-events-none"
-              style={{
-                bottom: '-3px',
-                left: '45px',
-                width: '4px',
-                height: '6px',
-                background: 'linear-gradient(180deg, #dc2626 0%, #b91c1c 100%)',
-                borderRadius: '50% 50% 60% 40% / 60% 60% 40% 40%',
-                opacity: 0.8,
-                transform: 'rotate(-12deg)'
-              }}
-            />
           </div>
+          
+          {/* Realistic wax drips - moved outside main seal to avoid click interference */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              bottom: '-8px',
+              left: '15px',
+              width: '8px',
+              height: '14px',
+              background: 'linear-gradient(180deg, #b91c1c 0%, #991b1b 60%, #7f1d1d 100%)',
+              borderRadius: '40% 60% 80% 20% / 80% 80% 20% 20%',
+              opacity: 0.9,
+              boxShadow: 'inset -1px 0 2px rgba(0,0,0,0.3)',
+              transform: 'rotate(-5deg)',
+              zIndex: 5
+            }}
+          />
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              bottom: '-5px',
+              right: '20px',
+              width: '5px',
+              height: '9px',
+              background: 'linear-gradient(180deg, #dc2626 0%, #b91c1c 70%, #991b1b 100%)',
+              borderRadius: '50% 50% 70% 30% / 70% 70% 30% 30%',
+              opacity: 0.85,
+              transform: 'rotate(-3deg)',
+              boxShadow: 'inset -1px 0 2px rgba(0,0,0,0.2)',
+              zIndex: 5
+            }}
+          />
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              bottom: '-3px',
+              left: '45px',
+              width: '4px',
+              height: '6px',
+              background: 'linear-gradient(180deg, #dc2626 0%, #b91c1c 100%)',
+              borderRadius: '50% 50% 60% 40% / 60% 60% 40% 40%',
+              opacity: 0.8,
+              transform: 'rotate(-17deg)',
+              zIndex: 5
+            }}
+          />
         </div>
 
         {/* Click instruction (appears before opening) */}
