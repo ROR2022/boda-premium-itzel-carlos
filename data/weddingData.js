@@ -78,7 +78,7 @@ export const weddingData = {
 
   // 👗 Código de vestimenta
   dressCode: {
-    type: "Formal de gala",
+    type: "Formal",
     note: "Se reserva el color blanco para la novia",
     confirmationMessage: "¡Quiero compartir este momento tan esperado contigo! Por favor ayúdanos confirmando tu asistencia"
   },

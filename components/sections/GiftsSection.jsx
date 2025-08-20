@@ -6,6 +6,7 @@ import { weddingData } from '../../data/weddingData'
 import { getOverlayStyle } from '@/utils/overlay'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 import { getAnimationConfig } from '@/data/animationConfig'
+import Image from 'next/image'
 
 export default function GiftsSection() {
   const { gifts, styling } = weddingData
@@ -23,25 +24,34 @@ export default function GiftsSection() {
     <section
       ref={sectionRef}
       style={{
-        backgroundImage: `url('/images/marco1.png')`,
+       /*  backgroundImage: `url('/images/marco1.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
         ...animationStyle
       }}
      id="gifts" className="py-20">
       {/* Overlay configurable */}
-      <div
+      {/* <div
         style={getOverlayStyle(giftsSection)}
         className="absolute inset-0 z-0"
-      ></div>
+      ></div> */}
+
+      <div className='flex justify-center mb-4'>
+                <Image
+                  src="/images/decoration1a1.png"
+                  alt="Fecha"
+                  width={200}
+                  height={100}
+                />
+              </div>
 
       <div
       style={{
         animation: 'bounce1 2s ease 0s 1 normal forwards'
       }}
-       className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl">
+       className="container mx-auto px-4  p-6 rounded-2xl">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="font-script text-4xl text-secondary">Regalo</h2>
 

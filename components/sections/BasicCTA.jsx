@@ -17,7 +17,7 @@ const BasicCTA = () => {
       {
         ...animationStyle,
         position: 'relative',
-        zIndex: 5000,
+        zIndex: 8000,
       }
       }>
          {/* CTA - Sección de llamada a la acción premium */}

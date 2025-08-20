@@ -6,6 +6,7 @@ import { weddingData } from '../../data/weddingData'
 import { getOverlayStyle } from '@/utils/overlay'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 import { getAnimationConfig } from '@/data/animationConfig'
+import Image from 'next/image'
 
 export default function DateSection() {
   const { wedding, messages, styling } = weddingData
@@ -23,28 +24,28 @@ export default function DateSection() {
   return (
     <section 
       ref={sectionRef}
-      style={{
+      /* style={{
         backgroundImage: `url('/images/marco1.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
         ...animationStyle
-      }}
-    id="date" className="py-20 bg-primary/10">
+      }} */
+    id="date" className="py-20">
 
     {/* Overlay configurable */}
-      <div 
+       {/* <div 
         style={getOverlayStyle(dateSection)}
         className="absolute inset-0 z-0"
-      ></div>
+      ></div>  */}
 
       <div 
         style={{
           // Remover animación CSS duplicada, usar solo scroll animation
           willChange: 'transform, opacity' // Optimización para móviles
         }}
-        className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl"
+        className="container mx-auto px-4  p-6 rounded-2xl"
       >
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <p className="text-lg text-muted-foreground italic">
@@ -57,8 +58,26 @@ export default function DateSection() {
             <div className="text-2xl font-medium text-foreground mb-2">
               {wedding.dayName}
             </div>
+            <div className='flex justify-center gap-3'>
+              <div>
+                <Image
+                  src="/images/decoration1a.png"
+                  alt="Fecha"
+                  width={100}
+                  height={100}
+                />
+              </div>
             <div className="text-8xl font-bold text-primary mb-2">
               {wedding.day}
+            </div>
+            <div>
+              <Image
+                src="/images/decoration1b.png"
+                alt="Fecha"
+                width={100}
+                height={100}
+              />
+            </div>
             </div>
             <div className="text-2xl font-medium text-foreground mb-2">
               {wedding.month}

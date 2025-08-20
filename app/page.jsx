@@ -42,15 +42,21 @@ export default function WeddingInvitation() {
   }
 
   // Main Invitation Section
+  // Color Marfil #FFFFE3
+  // Color Verde #89ac76
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+    style={{
+      background: '#89ac7670',
+    }}
+    className="min-h-screen">
       {/* <Navigation /> */}
       {/* <DecorationElement /> */}
       <HeroSection />
       {/* <ParentsSection /> */}
       <DateSection />
       <CeremonySection />
-      <ReceptionSection />
+      {/* <ReceptionSection /> */}
       <TimelineSection />
       <DressCodeSection />
       <GiftsSection />

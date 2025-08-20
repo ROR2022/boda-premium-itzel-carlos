@@ -9,6 +9,9 @@ import { useWhatsApp } from '../../hooks/useWhatsApp'
 import { getOverlayStyle } from '@/utils/overlay'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 import { getAnimationConfig } from '@/data/animationConfig'
+import { PiCoatHanger } from "react-icons/pi";
+import Image from 'next/image'
+
 
 export default function DressCodeSection() {
   const { dressCode, styling } = weddingData
@@ -29,30 +32,43 @@ export default function DressCodeSection() {
       id="dresscode"
       className="py-20"
       style={{
-        backgroundImage: `url('/images/marco4.png')`,
+        /* backgroundImage: `url('/images/marco4.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
         zIndex: 5000, // Asegurar que la sección esté por encima de otros elementos
         ...animationStyle
       }}
     >
       {/* Overlay configurable */}
-      <div
+      {/* <div
         style={getOverlayStyle(dressCodeSection)}
         className="absolute inset-0 z-0"
-      ></div>
+      ></div> */}
+
+<div className='flex justify-center mb-4'>
+          <Image
+            src="/images/decoration1a1.png"
+            alt="Fecha"
+            width={200}
+            height={100}
+          />
+        </div>
 
       <div
         style={{
           animation: 'bounce1 2s ease 0s 1 normal forwards'
         }}
-        className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl">
+        className="container mx-auto px-4  p-6 rounded-2xl">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="font-script text-4xl text-secondary">
             Código de Vestimenta
           </h2>
+
+          <div className='flex justify-center'>
+            <PiCoatHanger className='w-12 h-12 text-secondary' />
+          </div>
 
           <div 
           style={{display:'none'}}

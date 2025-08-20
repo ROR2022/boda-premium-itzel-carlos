@@ -23,19 +23,19 @@ export default function TimelineSection() {
     <section
       ref={sectionRef}
       style={{
-        backgroundImage: `url('/images/marco1.png')`,
+        /* backgroundImage: `url('/images/marco1.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
         ...animationStyle
       }}
      id="timeline" className="py-20">
       {/* Overlay configurable */}
-            <div
+          {/*   <div
               style={getOverlayStyle(timelineSection)}
               className="absolute inset-0 z-0"
-            ></div>
+            ></div> */}
 
       <div 
       style={{
@@ -43,9 +43,18 @@ export default function TimelineSection() {
       }}
       className="container mx-auto px-4 bg-transparent p-6 rounded-2xl">
 
+        <div className='flex justify-center mb-4'>
+          <Image
+            src="/images/decoration1a1.png"
+            alt="Fecha"
+            width={200}
+            height={100}
+          />
+        </div>
+
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center bg-transparent">
-            <div className="relative w-full h-96 rounded-2xl shadow-lg overflow-hidden">
+            <div className="relative w-full h-96 rounded-2xl  overflow-hidden">
               {/* Contenedor con forma de corazón - Versión más grande */}
               <div 
                 className="w-full h-full relative"

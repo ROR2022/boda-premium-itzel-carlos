@@ -13,52 +13,38 @@ export default function HeroSection() {
   const { heroSection } = styling
   
   // Solo usar animación de background para el Hero, no scroll animations
-  const animationConfig = getAnimationConfig('reception')
-  const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
-    animationConfig.options,
-    'background', // Solo animar el background
-    0, // Sin delay
-    false // No carga inmediata para el background
-  )
+  //const animationConfig = getAnimationConfig('reception')
+  //const { ref: sectionRef, style: animationStyle } = useScrollAnimation(
+    //animationConfig.options,
+    //'background', // Solo animar el background
+    //0, // Sin delay
+    //false // No carga inmediata para el background
+  //)
 
   return (
-    <div
-    style={{
-      backgroundImage: `url('/images/marco3.png')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      position: 'relative',
-    }}
-    >
+    
+    
     <section 
-      ref={sectionRef}
+      //ref={sectionRef}
       style={{
-        //border:'2px solid #000',
-        backgroundImage: `url('/images/novios1.jpg')`,
+        backgroundImage: `url('/images/novios2.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        backgroundColor: '#89ac76',
+      
         position: 'relative',
-        ...animationStyle
+      
       }}
-      id="home" 
+      //id="home" 
       className="min-h-screen flex flex-col justify-center items-center relative"
     >
-      {/* Overlay configurable */}
-      <div 
-        style={getOverlayStyle(heroSection)}
-        className="absolute inset-0 z-0"
-      ></div>
-
+      
       
       
       {/* Contenido principal - Usar solo animación CSS, no scroll-based */}
       <div 
-        style={{
-          animation: 'entrada1 2s ease 0s 1 normal forwards',
-          willChange: 'transform, opacity' // Optimización para móviles
-        }}
+       
         className="bg-slate-300 bg-opacity-60 p-6 rounded-2xl relative z-10 text-center space-y-6 px-4"
       >
         <h1 className="font-script text-6xl md:text-8xl text-foreground mb-4">
@@ -70,19 +56,7 @@ export default function HeroSection() {
           ))}
         </h1>
 
-        <div 
-        style={{display:'none'}}
-        className="relative w-80 h-80 mx-auto rounded-full overflow-hidden border-8 border-white shadow-2xl">
-          <Image
-            src={couple.mainImage}
-            alt={`${couple.bride} y ${couple.groom}`}
-            fill
-            className="object-cover"
-            priority
-            sizes="320px"
-          />
-        </div>
-
+      
         <div className="space-y-2">
           <div className="text-6xl text-secondary font-script">
             {couple.initials}
@@ -107,6 +81,6 @@ export default function HeroSection() {
         </p>
       </div>
     </section>
-    </div>
+    
   )
 }

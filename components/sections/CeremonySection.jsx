@@ -27,10 +27,10 @@ export default function CeremonySection() {
     <section
       ref={sectionRef}
       style={{
-        backgroundImage: `url('/images/marco2.png')`,
+        /* backgroundImage: `url('/images/marco2.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "no-repeat", */
         position: "relative",
         zIndex: 5000,
         ...animationStyle,
@@ -39,10 +39,10 @@ export default function CeremonySection() {
       className="py-20"
     >
       {/* Overlay configurable */}
-      <div
+      {/* <div
         style={getOverlayStyle(ceremonySection)}
         className="absolute inset-0 z-0"
-      ></div>
+      ></div> */}
 
       <div
         style={{
@@ -52,7 +52,7 @@ export default function CeremonySection() {
           position: "relative",
           zIndex: 4000,
         }}
-        className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl"
+        className="container mx-auto px-4  p-6 rounded-2xl"
       >
         <div
           style={{
@@ -62,12 +62,12 @@ export default function CeremonySection() {
           className="max-w-4xl mx-auto"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative w-full h-96 rounded-2xl shadow-lg overflow-hidden">
+            <div className="relative w-full flex justify-center items-center h-96 rounded-2xl shadow-lg overflow-hidden">
               <Image
                 src={couple.sunsetImage}
                 alt="Pareja al atardecer"
                 fill
-                className="object-cover"
+                className="object-cover "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -100,6 +100,9 @@ export default function CeremonySection() {
                   }}
                   className="space-y-4"
                 >
+                   <div className="text-8xl text-secondary font-script mb-4">
+            {couple.initials}
+          </div>
                   <h4 className="text-2xl font-bold text-foreground">
                     {ceremony.name}
                   </h4>

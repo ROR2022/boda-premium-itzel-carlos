@@ -27,7 +27,7 @@ export default function WelcomeMessage({ onContinue }) {
     }}
     className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       {/* Decorative floral elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 opacity-30">
+     {/*  <div className="absolute top-0 left-0 w-64 h-64 opacity-30">
         <Image
           src="/placeholder.svg?height=256&width=256"
           alt="Decoración floral"
@@ -62,15 +62,15 @@ export default function WelcomeMessage({ onContinue }) {
           height={256}
           className="w-full h-full object-cover"
         />
-      </div>
+      </div> */}
 
       {/* Main content card */}
       <div
         className={`relative z-10 max-w-2xl mx-auto transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          isVisible ? "" : ""
         }`}
       >
-        <div className="bg-primary/90 rounded-3xl p-12 text-center text-slate-400 shadow-2xl backdrop-blur-sm">
+        <div className=" p-12 text-center text-slate-400">
           {/* Heart icon */}
           <div className="mb-8">
             <Heart className="w-16 h-16 mx-auto text-slate-400" />
@@ -95,7 +95,7 @@ export default function WelcomeMessage({ onContinue }) {
             </p>
 
             <p className="text-lg leading-relaxed">
-              Comenzamos una nueva etapa en nuestras vidas y no sería posible celebrar nuestra boda sin la compañía de
+              Comenzamos una nueva etapa en nuestras vidas y no sería posible celebrar nuestra boda civil sin la compañía de
               nuestra familia y nuestros mejores amigos.
             </p>
           </div>
