@@ -141,8 +141,9 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
         >
           {/* Seal Shadow - moved outside clickable area */}
           <div 
-            className="absolute bg-red-900/30 rounded-full blur-xl pointer-events-none" 
+            className="absolute rounded-full blur-xl pointer-events-none" 
             style={{ 
+              background: 'rgba(232, 179, 75, 0.3)', // Dorado para la sombra
               top: '3px',
               left: '-7px',
               width: '124px',
@@ -165,15 +166,15 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               width: "110px",
               height: "110px",
               background: `
-                radial-gradient(circle at 30% 30%, #dc2626 0%, #b91c1c 40%, #991b1b 70%, #7f1d1d 100%)
+                radial-gradient(circle at 30% 30%, #e8b34b 0%, #d4a74a 40%, #c09449 70%, #a67c39 100%)
               `,
               borderRadius: "47% 53% 48% 52% / 52% 48% 52% 48%",
               boxShadow: `
-                0 12px 25px rgba(127, 29, 29, 0.5),
-                0 6px 12px rgba(127, 29, 29, 0.4),
-                inset 0 -4px 8px rgba(127, 29, 29, 0.6),
+                0 12px 25px rgba(166, 124, 57, 0.5),
+                0 6px 12px rgba(166, 124, 57, 0.4),
+                inset 0 -4px 8px rgba(166, 124, 57, 0.6),
                 inset 0 2px 4px rgba(255, 255, 255, 0.15),
-                inset -2px -2px 6px rgba(127, 29, 29, 0.4)
+                inset -2px -2px 6px rgba(166, 124, 57, 0.4)
               `,
               transform: 'rotate(-5deg)',
               zIndex: 10,
@@ -188,7 +189,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               style={{
                 background: `
                   radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 30%),
-                  radial-gradient(circle at 60% 60%, #b91c1c 0%, #991b1b 50%)
+                  radial-gradient(circle at 60% 60%, #d4a74a 0%, #c09449 50%)
                 `,
                 borderRadius: "inherit",
                 opacity: 0.8
@@ -207,23 +208,23 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                 {/* Couple silhouette SVG */}
                 <svg width="50" height="50" viewBox="0 0 100 100" className="opacity-80 pointer-events-none">
                   {/* Female figure */}
-                  <ellipse cx="35" cy="25" rx="8" ry="10" fill="rgba(127, 29, 29, 0.6)" />
+                  <ellipse cx="35" cy="25" rx="8" ry="10" fill="rgba(166, 124, 57, 0.6)" />
                   <path 
                     d="M 35 35 Q 30 40, 28 55 L 32 80 L 38 80 L 42 55 Q 40 40, 35 35"
-                    fill="rgba(127, 29, 29, 0.6)"
+                    fill="rgba(166, 124, 57, 0.6)"
                   />
                   
                   {/* Male figure */}
-                  <circle cx="65" cy="23" r="8" fill="rgba(127, 29, 29, 0.6)" />
+                  <circle cx="65" cy="23" r="8" fill="rgba(166, 124, 57, 0.6)" />
                   <path 
                     d="M 65 31 Q 60 35, 58 55 L 62 80 L 68 80 L 72 55 Q 70 35, 65 31"
-                    fill="rgba(127, 29, 29, 0.6)"
+                    fill="rgba(166, 124, 57, 0.6)"
                   />
                   
                   {/* Heart between them */}
                   <path 
                     d="M 50 45 C 48 42, 44 42, 44 45 C 44 42, 40 42, 38 45 Q 38 50, 44 55 Q 50 50, 50 45 Z"
-                    fill="rgba(127, 29, 29, 0.4)"
+                    fill="rgba(166, 124, 57, 0.4)"
                     transform="translate(6, -5)"
                   />
                   
@@ -231,7 +232,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                   <line 
                     x1="42" y1="50" 
                     x2="58" y2="50" 
-                    stroke="rgba(127, 29, 29, 0.5)" 
+                    stroke="rgba(166, 124, 57, 0.5)" 
                     strokeWidth="2"
                   />
                 </svg>
@@ -255,7 +256,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               left: '15px',
               width: '8px',
               height: '14px',
-              background: 'linear-gradient(180deg, #b91c1c 0%, #991b1b 60%, #7f1d1d 100%)',
+              background: 'linear-gradient(180deg, #d4a74a 0%, #c09449 60%, #a67c39 100%)',
               borderRadius: '40% 60% 80% 20% / 80% 80% 20% 20%',
               opacity: 0.9,
               boxShadow: 'inset -1px 0 2px rgba(0,0,0,0.3)',
@@ -270,7 +271,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               right: '20px',
               width: '5px',
               height: '9px',
-              background: 'linear-gradient(180deg, #dc2626 0%, #b91c1c 70%, #991b1b 100%)',
+              background: 'linear-gradient(180deg, #e8b34b 0%, #d4a74a 70%, #c09449 100%)',
               borderRadius: '50% 50% 70% 30% / 70% 70% 30% 30%',
               opacity: 0.85,
               transform: 'rotate(-3deg)',
@@ -285,7 +286,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
               left: '45px',
               width: '4px',
               height: '6px',
-              background: 'linear-gradient(180deg, #dc2626 0%, #b91c1c 100%)',
+              background: 'linear-gradient(180deg, #e8b34b 0%, #d4a74a 100%)',
               borderRadius: '50% 50% 60% 40% / 60% 60% 40% 40%',
               opacity: 0.8,
               transform: 'rotate(-17deg)',

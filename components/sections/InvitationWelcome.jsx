@@ -18,7 +18,14 @@ export default function WelcomeMessage({ onContinue }) {
   }
 
   return (
-    <div className="min-h-screen bg-emerald-800 flex items-center justify-center p-4 relative overflow-hidden">
+    <div 
+    style={{
+        backgroundImage: `url('/images/marco1.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+    }}
+    className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       {/* Decorative floral elements */}
       <div className="absolute top-0 left-0 w-64 h-64 opacity-30">
         <Image
@@ -63,10 +70,10 @@ export default function WelcomeMessage({ onContinue }) {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}
       >
-        <div className="bg-primary/90 rounded-3xl p-12 text-center text-white shadow-2xl backdrop-blur-sm">
+        <div className="bg-primary/90 rounded-3xl p-12 text-center text-slate-400 shadow-2xl backdrop-blur-sm">
           {/* Heart icon */}
           <div className="mb-8">
-            <Heart className="w-16 h-16 mx-auto text-white fill-white" />
+            <Heart className="w-16 h-16 mx-auto text-slate-400" />
           </div>
 
           {/* Decorative line */}
