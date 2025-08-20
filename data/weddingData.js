@@ -37,7 +37,7 @@ export const weddingData = {
   ceremony: {
     time: "7:00 p.m",
     name: "Monarcas Jardin de Eventos",
-    address: "Calz de los Monarcas 140, Villas del Rey Segunda Etapa, 21354 Mexicali, B.C.",
+    address: "Calz de los Monarcas, Progreso, 21353 Mexicali, B.C.",
     type: "Ceremonia",
     ubiLink: "https://maps.app.goo.gl/VuchGrZ6ySK6k25s5"
   },
@@ -46,7 +46,7 @@ export const weddingData = {
   reception: {
     time: "8:00 pm",
     name: "Monarcas Jardin de Eventos",
-    address: "Calz de los Monarcas 140, Villas del Rey Segunda Etapa, 21354 Mexicali, B.C.",
+    address: "Calz de los Monarcas, Progreso, 21353 Mexicali, B.C.",
     type: "Recepción",
     ubiLink: "https://maps.app.goo.gl/VuchGrZ6ySK6k25s5"
   },
