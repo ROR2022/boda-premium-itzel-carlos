@@ -49,28 +49,11 @@ export default function TimelineSection() {
               {/* Contenedor con forma de corazón - Versión más grande */}
               <div 
                 className="w-full h-full relative"
-                style={{
-                  clipPath: `polygon(
-                    50% 25%,
-                    65% 10%, 80% 10%, 90% 20%, 90% 35%, 80% 45%,
-                    50% 85%,
-                    20% 45%, 10% 35%, 10% 20%, 20% 10%, 35% 10%
-                  )`,
-                  background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
-                  padding: '4px'
-                }}
+                
               >
                 <div 
                   className="w-full h-full relative"
-                  style={{
-                    backgroundColor: 'transparent',
-                    clipPath: `polygon(
-                      50% 25%,
-                      65% 10%, 80% 10%, 90% 20%, 90% 35%, 80% 45%,
-                      50% 85%,
-                      20% 45%, 10% 35%, 10% 20%, 20% 10%, 35% 10%
-                    )`
-                  }}
+                  
                 >
                   <Image
                     src="/images/logo1.png"

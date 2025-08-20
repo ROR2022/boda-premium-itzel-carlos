@@ -22,6 +22,15 @@ export default function HeroSection() {
   )
 
   return (
+    <div
+    style={{
+      backgroundImage: `url('/images/marco3.png')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+    }}
+    >
     <section 
       ref={sectionRef}
       style={{
@@ -41,6 +50,8 @@ export default function HeroSection() {
         style={getOverlayStyle(heroSection)}
         className="absolute inset-0 z-0"
       ></div>
+
+      
       
       {/* Contenido principal - Usar solo animación CSS, no scroll-based */}
       <div 
@@ -96,5 +107,6 @@ export default function HeroSection() {
         </p>
       </div>
     </section>
+    </div>
   )
 }

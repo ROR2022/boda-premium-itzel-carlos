@@ -77,10 +77,14 @@ export default function CeremonySection() {
               }}
               className="space-y-6">
               <div className="text-center">
-                <h2 className="font-script text-4xl text-secondary mb-4">
+                <h2 
+                style={{display:'none'}}
+                className="font-script text-4xl text-secondary mb-4">
                   ITINERARIO
                 </h2>
-                <h3 className="font-script text-5xl text-foreground mb-6">
+                <h3 
+                style={{display:'none'}}
+                className="font-script text-5xl text-foreground mb-6">
                   {ceremony.type}
                 </h3>
 
