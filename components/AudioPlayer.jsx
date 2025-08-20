@@ -34,8 +34,15 @@ function AudioPlayer() {
     style={{
       zIndex: 6000,
     }}
-    className="fixed bottom-10 right-10 group bg-slate-500 rounded-xl p-1">
-      <div className="relative">
+    className="flex gap-3 justify-center items-center fixed bottom-10 right-10 group bg-slate-500 rounded-xl p-1">
+       <div>
+          <h3 style={{color: 'white', fontSize: '1rem', fontFamily: 'cursive', fontStyle: 'italic'}}>
+            Nuestra Canción
+          </h3>
+        </div>
+      
+      
+      <div className="relative"> 
         
         {/* Anillo de progreso */}
         <div className="absolute inset-0 w-14 h-14">

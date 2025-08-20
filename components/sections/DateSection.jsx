@@ -24,10 +24,10 @@ export default function DateSection() {
     <section 
       ref={sectionRef}
       style={{
-        //backgroundImage: `url('${dateSection.backgroundImage}')`,
-        //backgroundSize: 'cover',
-        //backgroundPosition: 'center',
-        //backgroundRepeat: 'no-repeat',
+        backgroundImage: `url('/images/marco1.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         position: 'relative',
         ...animationStyle
       }}

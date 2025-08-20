@@ -26,10 +26,10 @@ export default function ReceptionSection() {
     <section
       ref={sectionRef}
       style={{
-        //backgroundImage: `url('${receptionSection.backgroundImage}')`,
-        //backgroundSize: 'cover',
-        //backgroundPosition: 'center',
-        //backgroundRepeat: 'no-repeat',
+        backgroundImage: `url('/images/marco3.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         position: 'relative',
         zIndex: 5000, // Asegurar que la sección esté por encima de otros elementos
         ...animationStyle

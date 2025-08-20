@@ -23,10 +23,10 @@ export default function TimelineSection() {
     <section
       ref={sectionRef}
       style={{
-        /* backgroundImage: `url('${timelineSection.backgroundImage}')`,
+        backgroundImage: `url('/images/marco1.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat', */
+        backgroundRepeat: 'no-repeat',
         position: 'relative',
         ...animationStyle
       }}
@@ -41,18 +41,46 @@ export default function TimelineSection() {
       style={{
         animation: 'bounce1 2s ease 0s 1 normal forwards'
       }}
-      className="container mx-auto px-4 bg-slate-300 bg-opacity-60 p-6 rounded-2xl">
+      className="container mx-auto px-4 bg-transparent p-6 rounded-2xl">
 
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center bg-transparent">
             <div className="relative w-full h-96 rounded-2xl shadow-lg overflow-hidden">
-              <Image
-                src="/images/logo1.png"
-                alt="Celebración"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              {/* Contenedor con forma de corazón - Versión más grande */}
+              <div 
+                className="w-full h-full relative"
+                style={{
+                  clipPath: `polygon(
+                    50% 25%,
+                    65% 10%, 80% 10%, 90% 20%, 90% 35%, 80% 45%,
+                    50% 85%,
+                    20% 45%, 10% 35%, 10% 20%, 20% 10%, 35% 10%
+                  )`,
+                  background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
+                  padding: '4px'
+                }}
+              >
+                <div 
+                  className="w-full h-full relative"
+                  style={{
+                    backgroundColor: 'transparent',
+                    clipPath: `polygon(
+                      50% 25%,
+                      65% 10%, 80% 10%, 90% 20%, 90% 35%, 80% 45%,
+                      50% 85%,
+                      20% 45%, 10% 35%, 10% 20%, 20% 10%, 35% 10%
+                    )`
+                  }}
+                >
+                  <Image
+                    src="/images/logo1.png"
+                    alt="Celebración"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -95,7 +123,7 @@ export default function TimelineSection() {
                 </div>
               ))}
 
-              <div className="text-center mt-8 p-6 bg-muted/50 rounded-lg">
+              <div className="text-center mt-8 p-6 bg-slate-300 bg-opacity-60 rounded-lg">
                 <p className="text-lg italic text-muted-foreground">
                   &ldquo;{messages.timelineQuote}&rdquo;
                 </p>
