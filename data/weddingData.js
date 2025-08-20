@@ -37,18 +37,18 @@ export const weddingData = {
   ceremony: {
     time: "7:00 p.m",
     name: "Monarcas Jardin de Eventos",
-    address: "Calz de los Monarcas, Progreso, 21353 Mexicali, B.C.",
+    address: "Calz de los Monarcas, Mexicali, 21353, BC, MX",
     type: "Ceremonia",
-    ubiLink: "https://maps.app.goo.gl/VuchGrZ6ySK6k25s5"
+    ubiLink: "https://maps.app.goo.gl/nEwQ1CXVF7Wa1omEA"
   },
 
   // 🎉 Información de la recepción
   reception: {
     time: "8:00 pm",
     name: "Monarcas Jardin de Eventos",
-    address: "Calz de los Monarcas, Progreso, 21353 Mexicali, B.C.",
+    address: "Calz de los Monarcas, Mexicali, 21353, BC, MX",
     type: "Recepción",
-    ubiLink: "https://maps.app.goo.gl/VuchGrZ6ySK6k25s5"
+    ubiLink: "https://maps.app.goo.gl/nEwQ1CXVF7Wa1omEA"
   },
 
   // ⏰ Timeline del evento
